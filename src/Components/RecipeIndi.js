@@ -28,11 +28,15 @@ const RecipeIndi = () => {
           ></img>
           <h2 className="my-5">Zutaten</h2>
           <ul>
-              {recipeIndi.fields.ingredient.split(",").map(ingred => <li>{ingred}</li>)}
+            {recipeIndi.fields.ingredient
+              .split(",")
+              .map((ingred, index) => (
+                <li key={index}>{ingred}</li>
+              ))}
           </ul>
           <h2 className="my-5">Zubreitung</h2>
           <div>
-              <p>{recipeIndi.fields.instructions}</p>
+            <p>{recipeIndi.fields.instructions}</p>
           </div>
         </>
       ) : (
